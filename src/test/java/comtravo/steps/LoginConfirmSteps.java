@@ -2,15 +2,10 @@ package comtravo.steps;
 
 import comtravo.pages.LoginPage;
 import comtravo.pages.TripBookingPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java8.En;
 
-import java.util.List;
-import java.util.Map;
-
 import static com.codeborne.selenide.Selenide.open;
-import static comtravo.utils.Constants.loginPage;
-import static comtravo.utils.Constants.tabTxt;
+import static comtravo.utils.Constants.*;
 
 /**
  * LoginConfirmSteps
@@ -28,16 +23,9 @@ public class LoginConfirmSteps implements En {
             open(loginPage);
         });
 
-        When("I enter user credentials:", (DataTable table) -> {
-            List<Map<String, String>> dataTable = table.asMaps();
-
-            String email = dataTable.get(0).get("email");
-            String password = dataTable.get(0).get("password");
-
-            qaLoginPage.signInInput(email, password);
+        When("I log into the system with valid user credentials", () -> {
+            qaLoginPage.logIn(workingEmail, password);
         });
-
-        And("I click on the SignIn button", qaLoginPage::clickSignInBtn);
 
         Then("I see the Book a trip tab", () -> {
             tripBookingPage.assertTabText(tabTxt);

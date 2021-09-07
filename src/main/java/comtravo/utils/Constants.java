@@ -7,8 +7,9 @@ package comtravo.utils;
 
 public class Constants {
     //    ------------  LoginPage  ---------------
-    public static String loginPage = " ";
-    //LoginPage url is specified in the test challenge document
+    public static String loginPage = "https://my.qa.comtravo.it/auth/login";
+    public static String workingEmail = "robot+qatask@comtravo.com";
+    public static String password = "Qatask@08";
 
     //    ------------  TripBookingPage  ---------------
     public static String tabTxt = "Book a trip";

@@ -12,17 +12,15 @@ import static com.codeborne.selenide.Selenide.$;
 public class LoginPage {
 
     /* Elements */
-    public static final By inputEmail = By.xpath("//body/app-root[1]/ctr-onboarding[1]/div[1]/ctr-auth-login[1]/form[1]/label[1]/div[1]/input[1]");
-    public static final By inputPassword = By.xpath("//body/app-root[1]/ctr-onboarding[1]/div[1]/ctr-auth-login[1]/form[1]/label[2]/div[2]/input[1]");
-    public static final By loginBtn = By.xpath("/html[1]/body[1]/app-root[1]/ctr-onboarding[1]/div[1]/ctr-auth-login[1]/form[1]/button[1]");
+    public static final By inputEmail = By.xpath("//input[@type='email']");
+    public static final By inputPassword = By.name("password");
+    public static final By loginBtn = By.cssSelector(".button");
 
     /* Methods */
-    public void signInInput(String email, String pwd) {
+    public void logIn(String email, String pwd) {
         $(inputEmail).setValue(email);
         $(inputPassword).setValue(pwd);
-    }
-
-    public void clickSignInBtn(){
         $(loginBtn).click();
     }
+
 }

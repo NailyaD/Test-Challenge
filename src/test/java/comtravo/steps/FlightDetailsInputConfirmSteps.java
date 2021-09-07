@@ -18,22 +18,16 @@ public class FlightDetailsInputConfirmSteps implements En {
         TripBookingPage tripBookingPage = new TripBookingPage();
         FligtsListPage fligtsListPage = new FligtsListPage();
 
-        When("I click in Select travelers field and type traveler name in the field", () -> {
-                    tripBookingPage.travellerNameInput(nameInput);
+        When("I type and select traveler name in the Select traveler field", () -> {
+                    tripBookingPage.selectTravellerName(nameInput);
                 });
-        And("I select traveler name from the result list", tripBookingPage::travellerNameSelect);
-
-        When("I click in Departure field and type desired town of departure in the field", () -> {
-                    tripBookingPage.departureInput(departureTown);
+        And("I type and select desired town from the Departure field", () -> {
+                    tripBookingPage.selectDeparture(departureTown);
                 });
-        And("I select desired departure airport name from the result list", tripBookingPage::departureSelect);
-
-        When("I click in Destination field and type desired town of destination in the field", () -> {
-                    tripBookingPage.destinationInput(destinationTown);
+        And("I type and select desired town from the Destination field", () -> {
+                    tripBookingPage.selectDestination(destinationTown);
                 });
-        And("I select desired destination airport name from the result list", tripBookingPage::destinationSelect);
-        When("I click on the calendar button", tripBookingPage::dateFieldClick);
-        And("I select a start and end date 2 months in the future", tripBookingPage::startAndEndDateSelect);
+        And("I select a start and end date 2 months in the future", tripBookingPage::selectStartAndEndDate);
         And("I click on Search flights button", tripBookingPage::searchBtnClick);
 
         Then("I see that flight result is present", () -> {

@@ -19,13 +19,10 @@ public class FlightSelectionConfirmSteps implements En {
         FligtsListPage fligtsListPage = new FligtsListPage();
         FlightCheckoutPage flightCheckoutPage = new FlightCheckoutPage();
 
-        When("I select a suitable flight and click on Select option button", fligtsListPage::clickSelectOptionBtn);
-        Then("I see the validation text in a header", () -> {
-            flightCheckoutPage.assertHeaderText(headerTxt);
+        When("I select a suitable flight", fligtsListPage::selectFlight);
+        Then("I see the header text and traveler name in the box near flight details", () -> {
+            flightCheckoutPage.assertHeaderTextAndTravelerName(headerTxt, travelerName);
         });
 
-        Then("I see traveler name in the box near flight details", () -> {
-            flightCheckoutPage.assertTravelerName(travelerName);
-        });
     }
 }

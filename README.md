@@ -6,7 +6,7 @@ This is only a challenging task demonstrating how to confirm flight booking on a
 
 The project describes the following use case:
 
-* Logging in to the booking system, entering flight details, choosing the right flight and booking confirmation.
+* Logging in to the booking system, entering flight details, choosing the right flight and receiving the booking confirmation.
 
 ## Prerequisits/Tools
 
@@ -16,22 +16,19 @@ The project describes the following use case:
 * Git
 * Selenide & Selenium
 * Cucumber
-* Chrome browser (you may also use the following browsers: FireFox, Microsoft Edge)
+* Chrome browser
 
 ## How to run
 
-You can check out the project and run it locally with a few minutes. Just clone the project and type in command line:
+You can run the project locally with a few minutes. 
 
-To run tests in Chrome browser
-`mvn test -Dselenide.browser=chrome`
+`git clone https://github.com/NailyaD/Test-Challenge.git`
 
-To run tests in FireFox browser
-`mvn test -Dselenide.browser=firefox`
+`cd Test-Challenge/`
 
-To run tests in Microsoft Edge browser
-`mvn test -Dselenide.browser=edge`
+`mvn test`
 
-or run it by clicking on Run test button in RunCukesTests class using IDE.
+or run it by clicking on Run test button in RunCukesTest class using IDE.
 
 ## Contributors
 
